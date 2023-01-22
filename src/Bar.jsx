@@ -4,11 +4,11 @@ import "./index.css";
 const Bar = ({ item, idnum }) => {
   const mystyle = {
     color: "white",
-    backgroundColor: "DodgerBlue",
+    backgroundColor: "rgb(7 157 206)",
     // padding: "10px",
     fontFamily: "Arial",
-    height: 3 * item,
-    width: "4px",
+    height: item,
+    width: "2px",
   };
   return <div id={`bar-${idnum}`} className="bar" style={mystyle}></div>;
 };
