@@ -1,4 +1,5 @@
 export async function swapWithAnimation(arr, i, j, speed, setList) {
+    if (i == j) return;
     document.getElementById(`bar-${i}`).style.backgroundColor = 'red';
     document.getElementById(`bar-${j}`).style.backgroundColor = 'red';
     let temp = arr[i];
