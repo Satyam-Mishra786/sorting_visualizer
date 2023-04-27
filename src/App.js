@@ -82,8 +82,8 @@ function App() {
         </div>
         <select id="sortingAlgos" defaultValue="bubble-sort" onChange={(e) => setSortingAlgo(e.target.value)} disabled={start}>
           <option className="sortingType" value="bubble-sort">Bubble Sort</option>
-          <option className="sortingType" value="merge-sort">Merge Sort</option>
-          <option className="sortingType" value="selection-sort" >Selection Sort</option>
+          <option className="sortingType" disabled value="merge-sort">Merge Sort</option>
+          <option className="sortingType" disabled value="selection-sort" >Selection Sort</option>
           <option className="sortingType" value="quick-sort">Quick Sort</option>
         </select>
 
