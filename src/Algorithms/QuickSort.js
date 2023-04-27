@@ -19,22 +19,26 @@ async function partition(aux, list, low, high, speed, setList) {
     parBar.style.backgroundColor = 'green';
     return (i + 1);
 }
+export async function quickSort(aux, list, low, high, speed, setList, start, setStart) {
+    setStart((prev) => !prev);
+    await quickSort2(aux, list, low, high, speed, setList);
+    setStart((prev) => !prev);
+}
 
-
-export async function quickSort(aux, list, low, high, speed, setList) {
+export async function quickSort2(aux, list, low, high, speed, setList) {
     if (low < high) {
 
         // pi is partitioning index, arr[p]
         // is now at right place
         let pi = await partition(aux, list, low, high, speed, setList);
         // partition and after partition
-        await quickSort(aux, list, low, pi - 1, speed, setList);
+        await quickSort2(aux, list, low, pi - 1, speed, setList);
         for (let i = low; i < pi; i++) {
             let barSome = document.getElementById(`bar-${i}`);
             barSome.style.backgroundColor = 'green';
         }
 
-        await quickSort(aux, list, pi + 1, high, speed, setList);
+        await quickSort2(aux, list, pi + 1, high, speed, setList);
         for (let i = pi + 1; i < high + 1; i++) {
             let barSome = document.getElementById(`bar-${i}`);
             barSome.style.backgroundColor = 'green';

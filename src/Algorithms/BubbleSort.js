@@ -11,11 +11,18 @@ export async function bubbleSort(list, start, setStart, speed, setList) {
                 await swapWithAnimation(aux, j, j + 1, speed, setList);
             }
             if (j + 1 === track || track === 0) {
-                let first = document.getElementById(`bar-${track}`);
-                first.style.backgroundColor = "green";
+                await green(j, track)
                 --track;
             }
         }
     }
     setStart((prevStart) => !prevStart);
+}
+
+
+async function green(j, track) {
+    if (j + 1 === track || track === 0) {
+        let first = document.getElementById(`bar-${track}`);
+        first.style.backgroundColor = "green";
+    }
 }
